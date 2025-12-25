@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا</title>
+
+    <link rel="assests/icon" type="image/x-icon" href="resort.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header id="contact">
+        <nav class="navbar-p2">
+            <div class="brand-p2" >
+                <img src="assests/resort.png" class="logo-img-p2">
+                <div class="logo-text-p2">منتجع كوست لاين</div>
+            </div>
+
+            <ul class="nav-links-p2">
+                <li><a href="#contact">الرئيسية</a></li>
+                <li><a href="rooms-facilities.html">الغرف والمرافق</a></li>
+                <li><a href="booking.html">الحجز</a></li>
+                <li><a href="contact.html">تواصل معنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<h1 class="title-p4">تواصل معنا</h1>
+
+<section class="contact-box-p4">
+    <h2>أرسل لنا رسالة</h2>
+    <p class="subtitle-p4">يسعدنا التواصل معك!</p>
+
+    <form id="contactForm">
+        <label>الاسم الكامل</label>
+        <input type="text" placeholder="أية ناصر">
+
+        <label>البريد الإلكتروني</label>
+        <input type="email" placeholder="yaken.ah@example.com">
+
+        <label>رقم الهاتف</label>
+        <input type="text" placeholder="091*******">
+
+        <label>نوع الاستفسار</label>
+        <select>
+            <option>استفسار عام</option>
+            <option>سؤال عن الحجز</option>
+            <option>مشكلة في الدفع</option>
+            <option>ملاحظات أو اقتراحات</option>
+        </select>
+
+        <label>رسالتك</label>
+        <textarea placeholder="اكتب رسالتك هنا..."></textarea>
+
+        <button type="submit">إرسال الرسالة</button>
+    </form>
+    <p id="successMessage" class="success-message-p4">
+    ✅ تم إرسال رسالتك بنجاح، سنقوم بالرد عليك في أقرب وقت
+</p>
+
+</section>
+
+<section class="info-box-p4">
+    <h3>معلومات التواصل</h3>
+    <p><strong>الهاتف:</strong> +1 202 555 0198</p>
+    <p><strong>البريد الإلكتروني:</strong> contact@luxuryhaven.com</p>
+    <p><strong>العنوان:</strong> 123 شارع المحيط، جزيرة الفردوس</p>
+    <p><strong>ساعات العمل:</strong> من الإثنين إلى الجمعة: 9 صباحًا – 5 مساءً</p>
+</section>
+
+<h2 class="map-title-p4">موقعنا على الخريطة</h2>
+
+<div class="map-container-p4">
+    <a href="https://maps.app.goo.gl/UFkmQ5mgDPdTS4Rs7?g_st=atm" target="_blank">
+        <img src="assests/Screenshot 2025-12-02 131305.png" alt="موقع المنتجع" style="width:100%; border-radius:8px; cursor:pointer;">
+    </a>
+</div>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault(); 
+
+    // عرض رسالة النجاح (استهداف الـ ID كما هو)
+    const msg = document.getElementById("successMessage");
+    msg.style.display = "block";
+
+    this.reset();
+
+    setTimeout(() => {
+        msg.style.display = "none";
+    }, 4000);
+});
+
+</script>
+<footer class="footer-p2">
+        <div class="left-p2">© 2025 كوست لاين. جميع الحقوق محفوظة.</div>
+        <div class="center-p2">
+            <p>📧 Cost@Line.com</p>
+            <p>📞 +1 202 555 0198</p>
+        </div>
+        <div class="right-p2">
+            <p>📍 123 شارع المحيط، جزيرة الفردوس</p>
+        </div>
+    </footer>
+</body>
+</html>

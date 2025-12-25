@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حجز الإقامة</title>
+    <link rel="assests/icon" type="image/x-icon" href="resort.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header id="book">
+        <nav class="navbar-p2">
+            <div class="brand-p2" >
+                <img src="assests/resort.png" class="logo-img-p2">
+                <div class="logo-text-p2">منتجع كوست لاين</div>
+            </div>
+
+            <ul class="nav-links-p2">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="rooms-facilities.html">الغرف والمرافق</a></li>
+                <li><a href="booking.html">الحجز</a></li>
+                <li><a href="contact.html">تواصل معنا</a></li>
+            </ul>
+        </nav>
+    </header>
+<section class="booking-container-p3">
+
+    <div class="booking-box-p3">
+        <h3>احجز إقامتك</h3>
+
+        <div class="form-grid-p3">
+            <div>
+                <label>تاريخ الوصول</label>
+                <input type="date" id="checkin">
+            </div>
+
+            <div>
+                <label>تاريخ المغادرة</label>
+                <input type="date" id="checkout">
+            </div>
+
+            <div>
+                <label>عدد البالغين</label>
+                <input type="number" min="1" value="2" id="adults">
+            </div>
+
+            <div>
+                <label>عدد الأطفال</label>
+                <input type="number" min="0" value="0" id="children">
+            </div>
+
+            <div class="full-p3">
+                <label>نوع الغرفة</label>
+                <select id="roomType">
+                    <option data-price="200">عادية</option>
+                    <option data-price="350">ديلوكس</option>
+                    <option data-price="450">عائلية</option>
+                    <option data-price="700">فاخرة</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="summary-box-p3">
+        <h3>ملخص الحجز</h3>
+
+        <p>تاريخ الوصول: <strong><span id="sum-checkin">-</span></strong></p>
+        <p>تاريخ المغادرة: <strong><span id="sum-checkout">-</span></strong></p>
+
+        <p>
+            عدد النزلاء:
+            <strong>
+                <span id="sum-adults">2</span> بالغين،
+                <span id="sum-children">0</span> أطفال
+            </strong>
+        </p>
+
+        <p>نوع الغرفة: <strong><span id="sum-room">-</span></strong></p>
+
+        <h2 class="total-title-p3">الإجمالي: $<span id="sum-price">0</span></h2>
+
+        <button class="confirm-btn-p3">تأكيد الحجز</button>
+
+        <div id="confirmation-message" class="confirmation-message-p3"></div>
+    </div>
+
+</section>
+
+<section class="rooms-section-p3">
+    <h2>الغرف المتاحة</h2>
+
+    <div class="rooms-grid-p3">
+
+        <div class="room-card-p3">
+            <img src="assests/photo_standrd.jpg">
+            <h4>غرفة عادية بإطلالة على الحديقة</h4>
+            <p>سرير واحد • إطلالة على الحديقة</p>
+            <div class="price-p3">$200 / لليلة</div>
+            <button class="book-btn-p3" data-room="عادية" data-price="200">احجز الآن</button>
+        </div>
+
+        <div class="room-card-p3">
+            <img src="assests/photo_delux.jpg">
+            <h4>غرفة ديلوكس بإطلالة بحرية</h4>
+            <p>سرير واحد • واي فاي مجاني</p>
+            <div class="price-p3">$350 / لليلة</div>
+            <button class="book-btn-p3" data-room="ديلوكس" data-price="350">احجز الآن</button>
+        </div>
+
+        <div class="room-card-p3">
+            <img src="assests/photo_family.jpg">
+            <h4>غرفة عائلية بإطلالة بحرية</h4>
+            <p>سريرين • منطقة أطفال</p>
+            <div class="price-p3">$450 / لليلة</div>
+            <button class="book-btn-p3" data-room="عائلية" data-price="450">احجز الآن</button>
+        </div>
+
+        <div class="room-card-p3">
+            <img src="assests/photo_luxary.jpg">
+            <h4>جناح فاخر</h4>
+            <p>سرير ملكي • جاكوزي</p>
+            <div class="price-p3">$700 / لليلة</div>
+            <button class="book-btn-p3" data-room="فاخرة" data-price="700">احجز الآن</button>
+        </div>
+
+    </div>
+</section>
+<footer class="footer-p2">
+        <div class="left-p2">© 2025 كوست لاين. جميع الحقوق محفوظة.</div>
+        <div class="center-p2">
+            <p>📧 Cost@Line.com</p>
+            <p>📞 +1 202 555 0198</p>
+        </div>
+        <div class="right-p2">
+            <p>📍 123 شارع المحيط، جزيرة الفردوس</p>
+        </div>
+    </footer>
+
+<script>
+// تحديث الاختيارات لتشمل الكلاسات الجديدة
+const checkin = document.getElementById("checkin");
+const checkout = document.getElementById("checkout");
+const adults = document.getElementById("adults");
+const children = document.getElementById("children");
+const room = document.getElementById("roomType");
+
+const sCheckin = document.getElementById("sum-checkin");
+const sCheckout = document.getElementById("sum-checkout");
+const sAdults = document.getElementById("sum-adults");
+const sChildren = document.getElementById("sum-children");
+const sRoom = document.getElementById("sum-room");
+const sPrice = document.getElementById("sum-price");
+
+const confirmBtn = document.querySelector(".confirm-btn-p3");
+const messageBox = document.querySelector(".confirmation-message-p3");
+
+function calculateNights() {
+    if (!checkin.value || !checkout.value) return 0;
+    const inDate = new Date(checkin.value);
+    const outDate = new Date(checkout.value);
+    const diff = (outDate - inDate) / (1000 * 60 * 60 * 24);
+    return diff > 0 ? diff : 0;
+}
+
+function updateSummary() {
+    sCheckin.innerText = checkin.value ||"-";
+    sCheckout.innerText = checkout.value || "-";
+    sAdults.innerText = adults.value;
+    sChildren.innerText = children.value;
+    sRoom.innerText = room.value;
+
+    const pricePerNight = room.options[room.selectedIndex].dataset.price;
+    const nights = calculateNights();
+
+    sPrice.innerText = nights > 0 ? pricePerNight * nights : 0;
+}
+
+checkin.onchange = () => {
+    checkout.min = checkin.value;
+    updateSummary();
+};
+checkout.onchange = updateSummary;
+adults.oninput = updateSummary;
+children.oninput = updateSummary;
+room.onchange = updateSummary;
+
+document.querySelectorAll(".book-btn-p3").forEach(btn => {
+    btn.addEventListener("click", function () {
+        for (let opt of room.options) {
+            if (opt.text === this.dataset.room) {
+                room.value = opt.text;
+            }
+        }
+        updateSummary();
+        document.querySelector(".booking-container-p3")
+            .scrollIntoView({ behavior: "smooth" });
+    });
+});
+
+confirmBtn.onclick = () => {
+    if (!checkin.value || !checkout.value) {
+        messageBox.innerHTML = "⚠️ الرجاء تحديد تاريخ الوصول والمغادرة";
+        messageBox.style.display = "block";
+        return;
+    }
+
+    const nights = calculateNights();
+    if (nights <= 0) {
+        messageBox.innerHTML = "⚠️ تاريخ المغادرة يجب أن يكون بعد تاريخ الوصول";
+        messageBox.style.display = "block";
+        return;
+    }
+
+    messageBox.innerHTML = `
+        <h4>✅ تم تأكيد الحجز بنجاح</h4>
+        <p>الوصول: ${sCheckin.innerText}</p>
+        <p>المغادرة: ${sCheckout.innerText}</p>
+        <p>عدد الليالي: ${nights}</p>
+        <p>الغرفة: ${sRoom.innerText}</p>
+        <strong>الإجمالي: $${sPrice.innerText}</strong>
+    `;
+    messageBox.style.display = "block";
+};
+</script>
+
+</body>
+</html>
